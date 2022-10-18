@@ -818,11 +818,15 @@ nod.makeDomNode = function (element, mediator, configuration) {
         case nod.constants.VALID:
             nod.removeClass(errorClass, parent);
             nod.addClass(successClass, parent);
+            nod.removeClass(errorClass, element);
+            nod.addClass(successClass, element);
             break;
 
         case nod.constants.INVALID:
             nod.removeClass(successClass, parent);
             nod.addClass(errorClass, parent);
+            nod.removeClass(successClass, element);
+            nod.addClass(errorClass, element);
             break;
         }
     }
